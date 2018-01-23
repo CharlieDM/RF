@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>1069960701</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Debug\Obj\main.r90</file>
+      <file>$TOOLKIT_DIR$\inc\iomacro.h</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl3s-ec_mul-sf.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_uart.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\rf.pbd</file>
+      <file>$TOOLKIT_DIR$\src\template\cfg3soim.xcl</file>
+      <file>$TOOLKIT_DIR$\src\template\cfgm328p.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_pwm.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_io.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\interface.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_pwm.r90</file>
+      <file>$PROJ_DIR$\..\interface\hal_timer.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_timer.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_timer.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_rfsend.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_rfsend.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_rfreceive.pbi</file>
+      <file>$PROJ_DIR$\..\driver\hal_rfreceive.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_rfreceive.r90</file>
+      <file>$PROJ_DIR$\..\driver\hal_rfsend.c</file>
+      <file>$PROJ_DIR$\..\driver\hal_rfsend.h</file>
+      <file>$PROJ_DIR$\..\interface\rfreceive.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\rf_receive.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\rf_send.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\rf_send.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\rf_receive.r90</file>
+      <file>$PROJ_DIR$\..\app\main.c</file>
+      <file>$PROJ_DIR$\..\driver\hal_io.c</file>
+      <file>$PROJ_DIR$\..\app\data.h</file>
+      <file>$PROJ_DIR$\..\driver\hal_io.h</file>
+      <file>$PROJ_DIR$\..\driver\hal_timer.c</file>
+      <file>$PROJ_DIR$\..\driver\hal_timer.h</file>
+      <file>$PROJ_DIR$\..\interface\interface.c</file>
+      <file>$PROJ_DIR$\..\interface\interface.h</file>
+      <file>$PROJ_DIR$\..\interface\rf_receive.c</file>
+      <file>$PROJ_DIR$\..\interface\rf_receive.h</file>
+      <file>$PROJ_DIR$\..\interface\rf_send.c</file>
+      <file>$PROJ_DIR$\..\interface\rf_send.h</file>
+      <file>$PROJ_DIR$\..\pub\includes.h</file>
+      <file>$PROJ_DIR$\..\pub\type_def.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\interface.r90</file>
+      <file>$PROJ_DIR$\Debug\Exe\rf.hex</file>
+      <file>$PROJ_DIR$\Debug\Exe\rf.d90</file>
+      <file>$PROJ_DIR$\..\driver\hal_uart.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_io.pbi</file>
+      <file>$PROJ_DIR$\..\driver\hal_uart.h</file>
+      <file>$PROJ_DIR$\..\driver\hal_pwm.h</file>
+      <file>$PROJ_DIR$\..\driver\hal_pwm.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\rfreceive.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\rfreceive.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_uart.pbi</file>
+      <file>$TOOLKIT_DIR$\src\template\cfgm168pa.xcl</file>
+      <file>$TOOLKIT_DIR$\inc\iom168pa.h</file>
+      <file>$TOOLKIT_DIR$\inc\bitdefinitions\iom168pa.inc</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\interface\hal_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 12</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\driver\hal_rfreceive.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 38 52 1 53 39</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\driver\hal_rfsend.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 15</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20 38 52 1 53 39</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\interface\rfreceive.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 49</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 38 52 1 53 39</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\app\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 0</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 54</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 33 38 52 1 53 39 28 35 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33 38 52 1 53 39 28 35 37</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\driver\hal_io.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 8</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 29 38 52 1 53 39 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29 38 52 1 53 39 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\driver\hal_timer.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 12</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 31 38 52 1 53 39 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 38 52 1 53 39 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\interface\interface.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 33 38 52 1 53 39 29 31</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33 38 52 1 53 39 29 31</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\interface\rf_receive.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 25</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 35 38 52 1 53 39 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35 38 52 1 53 39 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\interface\rf_send.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 37 38 52 1 53 39 31 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37 38 52 1 53 39 31 29</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\rf.hex</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 51 5 8 12 40 0 25 24 2</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\rf.d90</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 6 5 0 2</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\driver\hal_uart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 3</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 45 38 52 1 53 39</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45 38 52 1 53 39</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\driver\hal_pwm.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 7</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 46 38 52 1 53 39</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46 38 52 1 53 39</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+
