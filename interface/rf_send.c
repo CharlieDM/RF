@@ -12,19 +12,19 @@ void rf_send_one(void)
 {
     uint8 i = 0;
     
-    /* transmitted-carrier: */
-    for(i=0;i<22;i++)
+    /* notransmitted-carrier: 105us */
+    for(i=0;i<36;i++)
     {
-        PWM_Send_On();
+        PWM_Send_Off();
         DELAY_8_77US;
         PWM_Send_Off();
         DELAY_17_53US;
     }
     
-    /* notransmitted-carrier: */
-    for(i=0;i<22;i++)
+    /* transmitted-carrier: 420us */
+    for(i=0;i<12;i++)
     {
-        PWM_Send_Off();
+        PWM_Send_On();
         DELAY_8_77US;
         PWM_Send_Off();
         DELAY_17_53US;
@@ -36,19 +36,19 @@ void rf_send_zero(void)
 {
     uint8 i = 0;
     
-    /* transmitted-carrier: */
-    for(i=0; i<22; i++)
+    /* notransmitted-carrier: 420us */
+    for(i=0; i<12; i++)
     {
-        PWM_Send_On();
+        PWM_Send_Off();
         DELAY_8_77US;
         PWM_Send_Off();
         DELAY_17_53US;
     }
     
-    /* notransmitted-carrier: */
-    for(i=0; i<64; i++)
+    /* transmitted-carrier: 105us */
+    for(i=0; i<12; i++)
     {
-        PWM_Send_Off();
+        PWM_Send_On();
         DELAY_8_77US;
         PWM_Send_Off();
         DELAY_17_53US;
@@ -62,44 +62,39 @@ void rf_send_data(uint8 _data)
     
     for(i=0; i<8; i++)
     {
-        if(_data & 0x01)
+        if(_data & 0x80)
             rf_send_one();
         else
             rf_send_zero();
         
-        _data >>= 1;
+        _data <<= 1;
     }
 }
 
 /* rf_send_message function: */
-void rf_send_message(uint8 cmd, uint8 data)
+void rf_send_message(uint8 _data)
 {
     uint8 i = 0;
-    /* guidance code */
-    for(i=0; i<200; i++)
+    /* guidance code: 1998ms*/    
+    for(i=0; i<152; i++)
     {
         PWM_Send_On();
         DELAY_8_77US;
         PWM_Send_Off();
         DELAY_17_53US;
     }
-    
-    for(i=0; i<200; i++)
-    {
-        PWM_Send_Off();
-        DELAY_8_77US;
-        PWM_Send_Off();
-        DELAY_17_53US;
-    }
-    
-    /* cmd */
-    rf_send_data(cmd);
-    
+        
     /* data */
-    rf_send_data(data);
-    
-    /* opposite data */
-    rf_send_data(~data);
+    rf_send_data(_data);
 }
 
+/* rf_wakeup function: */
+void rf_wakeup(void)
+{
+    uint8 i=0;
+    for(i=0;i<30;i++)
+    {
+        rf_send_message(0xaa);
+    }
+}
 

@@ -1,35 +1,63 @@
 
 #include "hal_timer.h"
 #include "rf_receive.h"
+#include "hal_io.h"
+#include "data.h"
+
+uint16 g_delaytick = 0;
+uint8 g_ledtick = 0;
+uint8 g_tick = 0;
 
 /* timer init  */
 void hal_timerinit(void)
 {
-    SREG = 0x80; 
-    TCCR0B = 0x00;
-    TCCR0A = 0x00;
-    TCNT0 = 0xFF;
-    TIMSK0 = 0x01;
-    TCCR0B = 0x02;
+    TCCR1A = 0;
+    TCCR1B = 0;    
+    OCR1A = 12500;   
+    TCNT1 = 0x00;
+    TIMSK1 = (1<<OCIE1A);   
+    TCCR1B = (1<<WGM12) | (1<<CS11) | (1<<CS10);    
+    SREG = 0x80;
 }
 
 /* delay 8.77us */
 void delay8_77us(void)
 {
-    uint8 i = 68;
+    uint8 i = 40;
     while(i--);
 }
 
 /* delay 17.53us */
 void delay17_53us(void)
 {
-    uint8 i = 136;
+    uint8 i = 40;
     while(i--);
 }
 
-#pragma vector=TIMER0_OVF_vect
-__interrupt void timer0_ovf_vect()
+void delay_100ms(uint8 nms)
+{
+    g_delaytick = nms;
+    while(g_delaytick);
+}
+
+#pragma vector=TIMER1_COMPA_vect
+__interrupt void timer1_compa_vect()
 { 
-    rf_push(TCNT0);
+    if(g_delaytick)
+    {
+        g_delaytick--;
+    }
+    
+    if(g_ledtick++ >= 4)
+    {
+        g_ledtick = 0;
+        Led_HalfS_On();
+    }
+    
+    if(g_tick++ >= 9)
+    {
+        g_tick = 0;
+        gst_state.time1s = 0x01;
+    }
 }
 

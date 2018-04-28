@@ -55,7 +55,7 @@
         </option>
         <option>
           <name>LCEnableBitDefs</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>LCHeapSize</name>
@@ -213,7 +213,7 @@
         </option>
         <option>
           <name>GenDeviceSelectMenu</name>
-          <state>m168pa	ATmega168PA</state>
+          <state>m168	ATmega168</state>
         </option>
       </data>
     </settings>
@@ -719,7 +719,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state>rf.hex</state>
+          <state>rf_receive.hex</state>
         </option>
         <option>
           <name>OutputFormat</name>
@@ -785,7 +785,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>$TOOLKIT_DIR$\src\template\cfgm168pa.xcl</state>
+          <state>$TOOLKIT_DIR$\src\template\cfgm168.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -2032,12 +2032,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\interface\interface.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\interface\rf_receive.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\interface\rf_receive.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\interface\rf_send.c</name>

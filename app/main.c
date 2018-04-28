@@ -5,65 +5,78 @@
 #include "rf_send.h"
 
 /* global variables */
-data_t gt_data = {0};
+struct state_t gst_state = {0};
+struct rfdata_t gst_rf = {0};
 
+/* static variables */
 static eRunStatus sg_runStatus = MODE_SLEEPING;
+
 /* main function */
 int main(void)
 {    
-    uint8 temp = 0;
-    
-    /* hal init */
+    /* init */
     hal_init();
-  
+    PowerLedB_On();
+    RevLedG_On();    
+    BatLedG_On();
+    
     /* main loop */
     while(1)
     {
         switch(sg_runStatus)
         {
-            /* wait for low edge sign */
             case MODE_SLEEPING:
-                if(gt_data.status.start_sta == 0x01)
+                if( gst_state.start )
                 {
-                    /* change status */
+                    EmitLedB_On();
+                    rf_wakeup();
+                }
+                
+                if( gst_rf.state )
+                {
+                    gst_state.start = 0;
+                    RevLedG_On();
+                    SYS_STATE_Off();
+                    if(gst_rf.data & 0x08)
+                    {
+                        Led_SetState(eRedBlueHalfS);
+                    }                    
+                    gst_rf.state = 0;
                     sg_runStatus = MODE_WORKING;
-                    gt_data.status.start_sta = 0;
-                    
-                    /* send 2 times start sign to sender board */
                     
                 }
-              break;
-            
-            /* wait for the rf data of sender board */
-            case MODE_WORKING:              
-                /* check if haven received the sender board data */
-                if( rf_message_parse() )
+                else
                 {
-                    temp = gt_data.rfdata.oppdata;
-                    if( (gt_data.rfdata.data + temp) == 0xFF)
+                    RevLedR_On();
+                    SYS_STATE_On();
+                }
+              break;
+              
+            case MODE_WORKING:
+                if( gst_state.start )
+                {
+                    Led_SetState(eLedAllOff);
+                    PowerLedB_On();
+                    RevLedG_On();    
+                    BatLedG_On();
+                    sg_runStatus = MODE_SLEEPING;
+                }
+                
+                if( gst_state.time1s )
+                {
+                    gst_state.time1s = 0;
+                    if( gst_rf.connecting )
                     {
-                        if(gt_data.rfdata.data == RF_SYSTEM_ON)
-                        {
-                            
-                        }
-                        else if(gt_data.rfdata.data == RF_SYSTEM_OFF)
-                        {
-                            
-                        }
+                        SYS_STATE_Off();
+                        gst_rf.connecting = 0;
+                    }
+                    else
+                    {
+                        SYS_STATE_On();
                     }
                 }
-              
-                /* wait for low edge sign, then send stop sign to sender board */
-                if(gt_data.status.start_sta == 0x01)
-                {
-                    /* change status */
-                    sg_runStatus = MODE_SLEEPING;
-                    gt_data.status.start_sta = 0;
-                }
               break;
-              
-            default:
-              break;
+                
         }
     }
 }

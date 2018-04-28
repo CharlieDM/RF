@@ -4,6 +4,7 @@
 #include "includes.h"
 
 /****   Function define   ****/
-void rf_send_message(uint8 cmd, uint8 data);
+void rf_send_message(uint8 data);
+void rf_wakeup(void);
 
 #endif

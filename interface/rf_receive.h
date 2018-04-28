@@ -4,7 +4,7 @@
 #include "includes.h"
 
 /****   Marco define   ****/
-#define RF_REV_DATA_MAX             (20)
+#define RF_REV_DATA_MAX             (19)
 #define RF_DATA_GUIDANCE_CODE       (1)
 
 #define RF_SYSTEM_ON                (0xAA)
@@ -13,5 +13,6 @@
 /****   Function define   ****/
 void rf_push(uint8 data);
 uint8 rf_message_parse(void);
+void rf_clear(void);
 
 #endif
